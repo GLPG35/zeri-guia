@@ -1,0 +1,68 @@
+.fourth {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #f8b678;
+
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: linear-gradient(0deg, #f8b678, #f8b678), url('/bolt_pattern.jpg');
+		background-color: #fff;
+		background-repeat: repeat;
+		background-blend-mode: multiply, luminosity;
+		filter: opacity(0.12) saturate(150%);
+	}
+
+	.title {
+		padding: 5em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3em;
+		height: 100%;
+
+		h1 {
+			font-size: 4em;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: #87210a;
+		}
+
+		.champs {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 2em;
+
+			.champ {
+				height: 100%;
+				flex: 1;
+				clip-path: polygon(2em 0, 100% 0, 100% calc(100% - 2em), calc(100% - 2em) 100%, 0 100%, 0 2em, 2em 0);
+				position: relative;
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				span {
+					position: absolute;
+					padding-bottom: 2em;
+					font-weight: 700;
+					font-size: 2em;
+					color: #f0f0f0;
+					filter: drop-shadow(#000 0 0 5px);
+				}
+			}
+		}
+	}
+}

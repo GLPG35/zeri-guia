@@ -1,0 +1,55 @@
+.fifth {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #e1a6ff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: linear-gradient(0deg, #e1a6ff, #e1a6ff), url('/bolt_pattern.jpg');
+		background-color: #fff;
+		background-repeat: repeat;
+		background-blend-mode: multiply, luminosity;
+		filter: opacity(0.12) saturate(150%);
+	}
+
+	.emote {
+		position: absolute;
+		width: 10em;
+		height: 10em;
+		bottom: 5em;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	.title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 2em;
+
+		h1 {
+			font-size: 5em;
+			text-transform: uppercase;
+			font-weight: 900;
+			color: #381748;
+		}
+
+		p {
+			font-size: 2em;
+			color: #381748;
+		}
+	}
+}

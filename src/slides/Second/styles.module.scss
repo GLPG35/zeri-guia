@@ -1,0 +1,84 @@
+.second {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #eec3f8;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: linear-gradient(0deg, #eec3f8, #eec3f8), url('/bolt_pattern.jpg');
+		background-color: #fff;
+		background-repeat: repeat;
+		background-blend-mode: multiply, luminosity;
+		filter: opacity(0.12) saturate(150%);
+	}
+
+	.zeri2 {
+		position: absolute;
+		top: 0;
+		right: 30%;
+		width: auto;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: right;
+		}
+	}
+
+	.title {
+		width: 50%;
+		height: max-content;
+		padding: 5em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+
+		h1 {
+			font-size: 4em;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: #341133;
+		}
+
+		p {
+			font-size: 1.5em;
+			color: #3e163d;
+		}
+
+		span {
+			text-align: right;
+			color: #341133;
+		}
+
+		.minions {
+			width: 100%;
+			height: 20em;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			padding: 2em;
+
+			.minion {
+				width: auto;
+				height: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+}

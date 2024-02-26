@@ -1,0 +1,71 @@
+.first {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #130d2c;
+	position: relative;
+
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: linear-gradient(0deg, #201a3e, #201a3e), url('/bolt_pattern.jpg');
+		background-color: #fff;
+		background-repeat: repeat;
+		background-blend-mode: multiply, luminosity;
+	}
+
+	.zeri1 {
+		position: absolute;
+		width: auto;
+		height: 70%;
+		z-index: 0;
+		right: 15%;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.titleWrapper {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		
+		.title {
+			font-size: 3em;
+			display: flex;
+			flex-direction: column;
+			transform: rotate(-15deg);
+			translate: -3em 1em;
+			color: #00ff44;
+
+			span {
+				font-weight: 900;
+				text-transform: uppercase;
+
+				&:last-child {
+					font-size: 0.5em;
+					align-self: flex-end;
+					translate: 10em -3em;
+				}
+			}
+			
+			h1 {
+				font-family: 'Thunderion';
+				font-size: 4em;
+				vertical-align: middle;
+				translate: 1em;
+				filter: drop-shadow(10px 10px 10px #00000080);
+			}
+		}
+	}
+}
