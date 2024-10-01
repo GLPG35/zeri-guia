@@ -1,18 +1,28 @@
+import { useImagesStore } from '../../store/images'
 import styles from './styles.module.scss'
 import { motion } from 'framer-motion'
+import { Ref, forwardRef } from 'react'
 
-const Fourth = () => {
+interface Props {
+	key: string
+}
+
+const Fourth = forwardRef(({ key }: Props, ref: Ref<HTMLDivElement>) => {
+	const getImages = useImagesStore().getImages
+
+	const images = getImages('fourth')
+	
 	const champs = [
-		{ name: 'Alistar', url: '/alistar.webp' },
-		{ name: 'Brand', url: '/brand.webp' },
-		{ name: 'Maokai', url: '/maokai.webp' },
-		{ name: 'Yuumi', url: '/yuumi.webp' },
-		{ name: 'Rell', url: '/rell.webp' },
-		{ name: 'Zyra', url: '/zyra.webp' }
+		{ name: 'Alistar', url: images[0].src },
+		{ name: 'Brand', url: images[1].src },
+		{ name: 'Maokai', url: images[2].src },
+		{ name: 'Yuumi', url: images[3].src },
+		{ name: 'Rell', url: images[4].src },
+		{ name: 'Zyra', url: images[5].src }
 	]
 	
 	return (
-		<motion.div initial={{ x: 50 }} animate={{ x: 0 }} exit={{ x: 50 }} className={styles.fourth}>
+		<motion.div key={key} initial={{ x: 50 }} animate={{ x: 0 }} exit={{ x: 50 }} className={styles.fourth} ref={ref}>
 			<div className={styles.background}></div>
 			<div className={styles.title}>
 				<h1>Campeones para supportearme</h1>
@@ -32,6 +42,6 @@ const Fourth = () => {
 			</div>
 		</motion.div>
 	)
-}
+})
 
 export default Fourth

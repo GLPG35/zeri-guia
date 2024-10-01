@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.scss'
 import First from './slides/First'
 import Second from './slides/Second'
@@ -8,13 +8,48 @@ import Fifth from './slides/Fifth'
 import useMousePosition from './hooks/useMousePosition'
 import { AnimatePresence, motion } from 'framer-motion'
 import { TbArrowRight } from 'react-icons/tb'
+import { useImagesStore } from './store/images'
 
 const App = () => {
 	const [current, setCurrent] = useState(0)
-	const slides = [<First />, <Second />, <Third />, <Fourth />, <Fifth />]
+	const ref = useRef<HTMLDivElement>(null)
+	const slides = [<First key='first' ref={ref} />, <Second key='second' ref={ref} />, <Third key='third' ref={ref} />, <Fourth key='fourth' ref={ref} />, <Fifth key='fifth' ref={ref} />]
 	const maxSlides = slides.length - 1
 	const { x, y } = useMousePosition()
 	const [hover, setHover] = useState<'left'|'right'|undefined>()
+	const setImages = useImagesStore().setImages
+	const render = useImagesStore().render
+	const imageList = {
+		first: [
+			'/zeri_1.webp'
+		],
+		second: [
+			'/zeri_2.webp',
+			'/caster_minion.webp',
+			'/cannon_minion.webp'
+		],
+		third: [
+			'/zeri_3.webp',
+			'/3087.webp',
+			'/3031.webp',
+			'/3085.webp'
+		],
+		fourth: [
+			'/alistar.webp',
+			'/brand.webp',
+			'/maokai.webp',
+			'/yuumi.webp',
+			'/rell.webp',
+			'/zyra.webp'
+		],
+		fifth: [
+			'/emote.webp'
+		]
+	}
+
+	useEffect(() => {
+		setImages(imageList)
+	}, [])
 	
 	const prev = () => {
 		setCurrent(prev => prev > 0 ? prev - 1 : prev)
@@ -25,7 +60,7 @@ const App = () => {
 	}
 	
 	return (
-		<div className={styles.main}>
+		<div className={styles.main} ref={ref}>
 			<motion.div className={styles.cursor}
 			animate={{
 				top: y - 70 / 2,
@@ -43,11 +78,13 @@ const App = () => {
 				<div className={styles.right} onClick={next}
 				onMouseOver={() => setHover('right')}></div>
 			</div>
-			<AnimatePresence mode='popLayout' initial={false}>
-				{slides.map((slide, index) => {
-					if (index == current) return slide
-				})}
-			</AnimatePresence>
+			{render &&
+				<AnimatePresence mode='popLayout' initial={false}>
+					{slides.map((slide, index) => {
+						if (index == current) return slide
+					})}
+				</AnimatePresence>
+			}
 		</div>
 	)
 }
