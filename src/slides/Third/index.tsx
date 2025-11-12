@@ -23,7 +23,7 @@ const Third = forwardRef(({ key }: Props, ref: Ref<HTMLDivElement>) => {
 				<h1>Acompañenme en las team fights</h1>
 				<p>Una vez que tenga mis primeros tres items voy a tener bastante más daño y wave clear, pero no esperen que haga todo solo</p>
 				<motion.div className={styles.items}
-				initial={{ y: 200 }} animate={{ y: 0 }}>
+				initial={{ y: 200, x: 50 }} animate={{ y: 0, x: 0 }}>
 					<div className={styles.item}>
 						<img src={images[1].src} alt="" />
 					</div>

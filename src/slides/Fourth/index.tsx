@@ -13,11 +13,11 @@ const Fourth = forwardRef(({ key }: Props, ref: Ref<HTMLDivElement>) => {
 	const images = getImages('fourth')
 	
 	const champs = [
-		{ name: 'Alistar', url: images[0].src },
-		{ name: 'Brand', url: images[1].src },
-		{ name: 'Maokai', url: images[2].src },
-		{ name: 'Yuumi', url: images[3].src },
-		{ name: 'Rell', url: images[4].src },
+		{ name: 'Nami', url: images[0].src },
+		{ name: 'Karma', url: images[1].src },
+		{ name: 'Lulu', url: images[2].src },
+		{ name: 'Rell', url: images[3].src },
+		{ name: 'Leona', url: images[4].src },
 		{ name: 'Zyra', url: images[5].src }
 	]
 	

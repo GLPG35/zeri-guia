@@ -30,16 +30,16 @@ const App = () => {
 		],
 		third: [
 			'/zeri_3.webp',
-			'/3087.webp',
+			'/3032.webp',
 			'/3031.webp',
-			'/3085.webp'
+			'/3036.webp'
 		],
 		fourth: [
-			'/alistar.webp',
-			'/brand.webp',
-			'/maokai.webp',
-			'/yuumi.webp',
+			'/nami.webp',
+			'/karma.webp',
+			'/lulu.webp',
 			'/rell.webp',
+			'/leona.webp',
 			'/zyra.webp'
 		],
 		fifth: [
